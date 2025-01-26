@@ -68,7 +68,7 @@ export default async function Home() {
 
                     <div className="text-center">
                       <p className="text-text-secondary text-sm  mb-2">Gehad Salem</p>
-                      <h2 className="text-base font-medium">Let's connect over LinkedIn</h2>
+                      <h2 className="text-base font-medium">Let&apos;s connect over LinkedIn</h2>
                     </div>
 
                     <div className="flex justify-center">
