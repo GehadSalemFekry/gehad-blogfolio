@@ -3,6 +3,7 @@ import * as runtime from "react/jsx-runtime";
 import { highlight } from "sugar-high";
 import { HorizontalLine } from "./HorizontalLine";
 import Link from "next/link";
+import Image from "next/image";
 
 interface MDXProps {
   code: string;
@@ -11,9 +12,7 @@ interface MDXProps {
 }
 
 function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
+  let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
   let rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
@@ -56,7 +55,13 @@ function RoundedImage(props) {
       <span className="absolute top-0 inset-x-0">
         <HorizontalLine />
       </span>
-      <img src={props.src} alt={props.alt} className="rounded-3xl" />
+      <Image
+        src={props.src}
+        alt={props.alt}
+        className="rounded-3xl"
+        width={500} // TODO: Replace with an appropriate width
+        height={300} // TODO: Replace with an appropriate height
+      />
       <span className="absolute bottom-0 inset-x-0">
         <HorizontalLine />
       </span>
@@ -129,13 +134,7 @@ function ConsCard({ title, cons }) {
 
 function Code({ children, ...props }) {
   let codeHTML = highlight(children);
-  return (
-    <code
-      className="mb-8"
-      dangerouslySetInnerHTML={{ __html: codeHTML }}
-      {...props}
-    />
-  );
+  return <code className="mb-8" dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
 function slugify(str) {
@@ -172,9 +171,7 @@ function createHeading(level) {
 }
 
 function paragraph({ children }) {
-  return (
-    <p className="text-base text-text-secondary mb-8 leading-7">{children}</p>
-  );
+  return <p className="text-base text-text-secondary mb-8 leading-7">{children}</p>;
 }
 
 function OrderedList({ children }) {
@@ -210,7 +207,5 @@ const useMDXComponent = (code: string) => {
 
 export const MDXContent = ({ code, components, ...props }: MDXProps) => {
   const Component = useMDXComponent(code);
-  return (
-    <Component components={{ ...sharedComponents, ...components }} {...props} />
-  );
+  return <Component components={{ ...sharedComponents, ...components }} {...props} />;
 };

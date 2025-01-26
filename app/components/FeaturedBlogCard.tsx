@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type FeaturedBlogCardProps = {
   slug: string;
@@ -19,13 +20,16 @@ export function FeaturedBlogCard({
     <li className="flex flex-col h-full m-2">
       <Link className="flex flex-col rounded-2xl h-full" href={`/blog/${slug}`}>
         <div className="relative rounded-2xl h-[225px] overflow-hidden">
-          <img
+          <Image
             src={
-              `/blog/${imageName}` ||
-              "https://image.isu.pub/190918160849-8822f46c79620853d26cb2aad7175839/jpg/page_1_thumb_large.jpg"
+              imageName
+                ? `/blog/${imageName}`
+                : "https://image.isu.pub/190918160849-8822f46c79620853d26cb2aad7175839/jpg/page_1_thumb_large.jpg"
             }
             alt=""
             className="rounded-2xl h-full w-full object-cover"
+            width={800}
+            height={600} 
           />
           <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white px-4 py-3">
             <h2 className="tracking-tight text-lg font-medium leading-7">{title}</h2>

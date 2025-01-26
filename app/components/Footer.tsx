@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HorizontalLine } from "./HorizontalLine";
 import { SocialPill } from "./SocialPill";
 import { BgSectionTag, TagType } from "./BgSectionTag";
@@ -8,7 +9,7 @@ export function Footer() {
     <>
       <div className="max-w-7xl border-border-primary/50 relative">
         <HorizontalLine />
-        <div className="max-w-6xl lg:mx-auto flex divide-x">
+        <div className="px-20 flex divide-x">
           <div className="flex flex-col text-xs w-full py-6">
             <div className="flex w-full justify-start gap-20">
               <div>
@@ -46,20 +47,32 @@ export function Footer() {
             </div>
           </div>
           <div className="flex text-xs w-full py-6 pl-16">
-            <div>
+            <div className="w-full">
               <div className="space-y-6 flex-grow">
                 <Link className="inline-block" href="/">
-                  <img className="w-16 h-16" src="/logo.png" alt="Gehad's Logo" />
+                  <Image width={64} height={64} src="/logo.png" alt="Gehad's Logo" />
                 </Link>
-                <p className="w-60 text-gray-500 leading-5">
+                <p className="max-w-80 text-gray-500 leading-5">
                   I&apos;m Gehad - a software engineer, quantum computing researcher and blogger.
                   Thanks for checking out my site!
                 </p>
               </div>
-              <p className="mt-6 text-gray-500">© {new Date().getFullYear()} Gehad Salem</p>
-              {/* TODO: highlight Braydon Coyer Desgin */}
+              <p className="mt-6 text-gray-500">
+                © {new Date().getFullYear()} Gehad Salem. 
+                
+                Design inspired by{" "}
+                <Link
+                  href="https://www.braydoncoyer.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  Braydon Coyer
+                </Link>
+                .
+              </p>
             </div>
-            <div className="flex items-end w-full justify-end pr-16">
+            <div className="flex items-end justify-end">
               <SocialPill />
             </div>
           </div>

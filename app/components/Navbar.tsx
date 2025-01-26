@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { SocialPill } from "./SocialPill";
 import { usePathname } from "next/navigation";
 
@@ -38,13 +39,8 @@ const Navbar: React.FC = () => {
       <span className="w-2 h-px bg-slate-400 absolute left-[-4.50px] top-[63px] z-10"></span>
       <span className="w-px h-2 bg-slate-400 absolute left-[-1px] top-[59.6px] z-10"></span>
       <div className="w-[104px]">
-        {/* Need to match the size of the social bar so that everything correctly centers */}
         <Link href="/">
-          <img
-            className="w-10 h-10"
-            src="/logo.png"
-            alt="Gehad's Logo"
-          />
+          <Image width={64} height={64} src="/logo.png" alt="Gehad's Logo" />
         </Link>
       </div>
       <ul className="flex place-items-center space-x-4 border border-border-primary px-5 py-2 rounded-full text-sm text-gray-500">
@@ -52,9 +48,7 @@ const Navbar: React.FC = () => {
           <li key={link.name}>
             <Link
               href={link.link}
-              className={`${determineActiveClass(
-                link.link
-              )} hover:text-text-primary font-medium`}
+              className={`${determineActiveClass(link.link)} hover:text-text-primary font-medium`}
             >
               {link.name}
             </Link>

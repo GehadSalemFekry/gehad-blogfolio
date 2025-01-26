@@ -14,6 +14,7 @@ import { getBlogPostsByCategory } from "@/app/lib/utils";
 import { FeaturedBlogCard } from "@/app/components/FeaturedBlogCard";
 import { BgGradient } from "@/app/components/BgGradient";
 import readingDuration from "reading-duration";
+import Image from "next/image";
 
 interface BlogPageProps {
   params: Promise<{
@@ -104,11 +105,14 @@ export default async function BlogPage({ params }: BlogPageProps) {
         <span className="w-2 h-px bg-white absolute right-[44.5px] bottom-12 z-20"></span>
         <span className="w-px h-2 bg-white absolute right-[48px] bottom-[44.5px] z-20"></span>
 
-        <img
+        <Image
           src={`/blog/${post.imageName}`}
+          width={1200} 
+          height={600} 
           className="w-full h-[600px] object-cover rounded-2xl mb-16 drama-shadow"
           alt={post.title}
         />
+
         <div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-indigo-500/90 from-20% to-transparent rounded-2xl"></div>
         {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/75 to-transparent rounded-2xl"></div> */}
 
@@ -133,11 +137,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
           {/* View Count */}
           <div className="flex items-center gap-4 text-slate-300 text-sm">
             <div className="flex items-center gap-1.5 text-slate-300 text-xs">
-              <svg
-                className="w-5 h-5 text-slate-200"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-5 h-5 text-slate-200" fill="none" viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"
                   strokeLinecap="round"
@@ -202,11 +202,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
               <p>{readingTime}</p>
             </div>
             <div className="flex items-center gap-1 text-slate-200 text-xs">
-              <svg
-                className="text-slate-300 w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
+              <svg className="text-slate-300 w-5 h-5" fill="none" viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"
                   strokeLinecap="round"

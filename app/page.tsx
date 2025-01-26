@@ -11,6 +11,7 @@ import { AboutPattern, BlogPattern, HeaderPattern } from "./components/SvgPatter
 import { siteMetadata } from "app/data/siteMetadata";
 import { BentoCard } from "./components/BentoCard";
 import { Button } from "./components/Button";
+import Image from "next/image";
 
 export default async function Home() {
   const allPublishedBlogPosts = await fetchAndSortBlogPosts();
@@ -59,11 +60,7 @@ export default async function Home() {
                   <div className="flex flex-col h-full space-y-4 group items-center">
                     {/* Circle for LinkedIn Picture or Logo */}
                     <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-300">
-                      <img
-                        src="./profile_linkedin.jpeg"
-                        alt="LinkedIn Profile"
-                        className="object-cover w-full h-full"
-                      />
+                      <Image src="/profile_linkedin.jpeg" alt="LinkedIn Profile" width={80} height={80} />
                     </div>
 
                     <div className="text-center">

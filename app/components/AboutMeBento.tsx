@@ -1,5 +1,6 @@
 import { getTimeOfDayGreeting } from "../lib/utils";
 import { BentoCard } from "./BentoCard";
+import Image from "next/image";
 
 export function AboutMeBento({ linkTo }: { linkTo?: string }) {
   const timeOfDayGreeting = getTimeOfDayGreeting();
@@ -27,10 +28,12 @@ export function AboutMeBento({ linkTo }: { linkTo?: string }) {
               ></div>
             </div>
           </div>
-          <img
-            className="w-[180px] h-[270px] absolute -top-1 left-16 rotate-[8deg] object-cover rounded-lg shadow group-hover:rotate-[4deg] group-hover:scale-105 transition-all duration-500"
+          <Image
             src="/profile_pic_large.png"
             alt="A headshot"
+            width={180}
+            height={270}
+            className="w-[180px] h-[270px] absolute -top-1 left-16 rotate-[8deg] object-cover rounded-lg shadow group-hover:rotate-[4deg] group-hover:scale-105 transition-all duration-500"
           />
         </div>
       </div>

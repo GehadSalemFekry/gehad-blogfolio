@@ -6,6 +6,7 @@ import { HorizontalLine } from "./HorizontalLine";
 import Link from "next/link";
 import { GeistMono } from "geist/font/mono";
 import { BgGradient } from "./BgGradient";
+import Image from "next/image";
 
 interface MDXProps {
   code: string;
@@ -64,7 +65,7 @@ function CustomLink(props) {
 
 function RoundedImage(props) {
   return (
-    <img src={props.src} alt={props.alt} className="rounded-xl drama-shadow" />
+    <Image src={props.src} alt={props.alt} className="rounded-xl drama-shadow" />
   );
 }
 

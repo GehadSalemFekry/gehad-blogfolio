@@ -1,5 +1,6 @@
 import { softwareData } from "../data/toolbox";
 import { BentoCard } from "./BentoCard";
+import Image from "next/image";
 
 const items = softwareData
   .map((item, index) => (
@@ -22,7 +23,7 @@ const items = softwareData
           className="border-2 h-full rounded-xl border-[#A5AEB81F]/10 bg-[#EDEEF0] grid place-items-center"
           style={{ boxShadow: "0px 2px 1.5px 0px #A5AEB852 inset" }}
         >
-          <img className="w-10 h-10" alt={item.title} src={item.imgSrc} />
+          <Image src={item.imgSrc} alt={item.title} width={40} height={40} /> 
         </div>
       </div>
     </div>

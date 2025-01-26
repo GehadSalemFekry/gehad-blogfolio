@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function ProfilePicture() {
   return (
     <div className="relative mt-9">
@@ -52,10 +54,13 @@ export function ProfilePicture() {
           </filter>
         </defs>
       </svg>
-      <img
-        className="h-[100px] w-[100px] rounded-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
+
+      <Image
         src="/profile_pic.png"
-        alt=""
+        alt="Profile Picture"
+        width={100}
+        height={100}
+        className="h-[100px] w-[100px] rounded-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
       />
     </div>
   );

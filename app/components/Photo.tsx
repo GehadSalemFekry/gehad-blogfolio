@@ -12,7 +12,7 @@ const MotionImage = motion(
     props: ImageProps,
     ref: Ref<HTMLImageElement>
   ) {
-    return <Image ref={ref} {...props} />;
+    return <Image ref={ref} {...props} alt=""/>;
   })
 );
 type Direction = "left" | "right";
