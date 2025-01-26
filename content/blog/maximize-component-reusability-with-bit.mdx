@@ -1,0 +1,144 @@
+---
+title: "Maximize Component Reusability with Bit"
+publishedAt: 2024-11-27
+summary: We put so much emphasis on component reusability inside a project, why are we not putting as much emphasis on component shareability?
+imageName: component_reusability_with_bit_banner.jpeg
+numReads: 2423
+categories: ["research", "programming", "javascript", "devops", "react"]
+draft: true
+---
+
+<Thoughtquote>
+  This was taken and expanded upon from{" "}
+  <a href="https://braydoncoyer.dev/newsletter/">my newsletter.</a>
+</Thoughtquote>{" "}
+
+One of the main responsibilities when building components is to consider autonomy and reusability - and rightfully so! Architecting components in a reusable way allows optimal flexibility and will speed up development.
+
+But let me ask you this:
+
+If we (as a community) put so much emphasis on component reusability inside a project, why are we not putting as much emphasis on component _shareability_?
+
+We’ve all been there. We start another side project and, just like all projects we’ve worked on before, we begin the tedious process of building all of your core components: buttons, a navbar, images tuned for optimization, toggles, dropdowns, tables and more.
+
+It’s time-consuming. It’s redundant. How do we solve this issue?
+
+One option is to build a component library and publish it to NPM. This works well, but the process of getting our library on NPM is a journey on its own and can leave you feeling exhausted. Plus, if others are going to be using the components, it’s imperative that a documentation site is available to reduce friction and allow ease of use.
+
+So yes, one option is to publish to NPM. Does it work? Absolutely! Is it the easiest solution? Well, I don’t think so.
+
+The easier **solution** is to use [Bit](https://bit.dev) and focus on what we really enjoy: coding!
+
+## What is Bit?
+
+Bit promotes component-driven development and collaboration by isolating individual components and allowing them to be used (and worked on) anywhere!
+
+Gone are the days of opening old codebases, copying component code and porting them over to your current project. With Bit, you can simply install a component (or an entire library) directly into your project using your preferred package manager like npm or yarn!
+
+Bit treats each component as a first-class citizen with the consumer in mind - by exporting components to Bit.dev, components have their own unit tests and detailed documentation out of the box (more about Bit.dev in a moment)!
+
+```typescript
+function test(): void {
+  console.log("Hello, Bit!");
+}
+```
+
+```json
+{
+  ...
+  "editor.fontSize": 16,
+  "workbench.sideBar.location": "right",
+  "editor.formatOnPaste": true,
+  "editor.quickSuggestionsDelay": 0
+}
+```
+
+### Best custom developer blogs
+
+Here’s a list of some my favorite creative blogs that I’ve compiled to kickstart your creativity.
+
+1. [Josh Comeau](https://www.joshwcomeau.com/)
+2. [Una Kravets](https://una.im/archive/)
+3. [Monica Powell](https://aboutmonica.com/writing)
+4. [Telmo](https://telmo.is/)
+
+
+Take it a step further, and things get a bit more complex:
+
+- Sorting and filtering articles
+- Social sharing images
+- Share articles to social media outlets
+- Code syntax highlighting for snippets
+- Article read time
+
+<Ideaquote>
+  I’d love to code on my iPad too! While there isn’t a fully integrated IDE
+  solution yet, check out{" "}
+  <a
+    href="https://braydoncoyer.dev/blog/code-on-your-ipad-pro/"
+    target="_blank"
+  >
+    this article I wrote showing a work-around!
+  </a>
+</Ideaquote>
+
+<Infoquote>
+  If you haven't read parts{" "}
+  <a href="/blog/mocking-components-in-angular">one</a> and{" "}
+  <a href="/blog/mocking-services-in-angular">two</a>, I encourage you to come
+  back to this article after reviewing the foundational concepts laid out in
+  those posts.
+</Infoquote>
+
+```ts:karma.config.ts {4}
+module.exports = function(config) {
+	config.set({
+	...
+	browsers: ['ChomeHeadless'],
+	});
+}
+```
+
+![Documentation for a reaction component I've created for my revamped blog.](https://res.cloudinary.com/braydoncoyer/image/upload/v1637708329/bit_documentation.png)
+
+Documentation for a reaction component I've created for my revamped blog.
+
+The documentation site is extremely handy! Each component comes with its own dedicated document page that includes component usage, component compositions as a display for various component states, a list of properties the component is expecting (with prop type, default and description included) and a page dedicated for the component’s supporting unit tests.
+
+![Bit comes with compositions and component properties out-of-the-box!](https://res.cloudinary.com/braydoncoyer/image/upload/v1637708329/bit_documentation_properties.png)
+
+Bit comes with compositions and component properties out-of-the-box!
+
+## How does Bit work?
+
+Bit comes with its own version manager, the BVM.
+In order to work on Bit components, you’ll need a local workspace. Bit makes this trivial. You can work on Bit components in a preexisting project, or you can initialize a new workspace using the `bit` command.
+
+Once a workspace is initialized, components can be generated using the `bit create` command. Components are scoped to a namespace, allowing them to be self-contained and independent from any specific codebase, and be properly targeted for export.
+
+Bit allows you to tag and version components natively. This is extremely powerful and reduces the friction between consuming teams when you push updates to a specific component or library.
+
+In order for teams to use components you create, they need to be exported for consumption. [Bit.dev](https://harmony-docs.bit.dev/bit-dot-dev/bit-dev) is a component cloud solution for hosting and collaborating on Bit components. It’s free and offers premium options for teams. You can also publish components directly to NPM if that’s more your style!
+
+## Get Started with Bit
+
+It’s extremely easy to get up and running with your first Bit project!
+
+Feel free to read the [official documentation](https://harmony-docs.bit.dev/getting-started/installing-bit), create your first component and publish it to Bit.dev!
+
+If you prefer to watch a video walkthrough, check out this video by [Debbie O’Brien](https://debbie.codes)!
+
+<iframe
+  className="w-full"
+  height="515"
+  src="https://www.youtube.com/embed/7afMBwj5fR4"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen={true}
+></iframe>
+
+## Let’s Redefine Reusability
+
+Our community has grown to accept and promote component reusability, but restrained to the scope of the project they’re working in.
+
+Yes, components should be autonomous, modular and crafted in a way where they can be used in a wide variety of situations. But they should also be reusable across multiple projects! Let’s redefine and maximize component reusability!
