@@ -4,6 +4,7 @@ import { extractUniqueBlogCategories, fetchAndSortBlogPosts } from "app/lib/util
 import { BlogPageHeader } from "@/app/components/BlogPageHeader";
 // import { CategorySelect } from "@/app/components/CategorySelect";
 import { FeaturedBlogCard } from "../components/FeaturedBlogCard";
+import { AboutPattern } from "../components/SvgPatterns";
 
 export default async function BlogPage({}: // searchParams,
 {
@@ -37,10 +38,10 @@ export default async function BlogPage({}: // searchParams,
   // );
 
   return (
-    <div className="space-y-[80px] px-5 my-[100px] w-full">
+    <div className="space-y-[40px] md:space-y-[80px]  md:px-5 my-[60px] md:my-[100px] w-full">
+      <AboutPattern />
       <BlogPageHeader title="Insightful & helpful content curated for you." />
-
-      <ul className="grid grid-cols-3 gap-2">
+      <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-2">
         {allPublishedBlogPosts.map((post) => (
           <FeaturedBlogCard
             key={post.slug}
@@ -56,7 +57,6 @@ export default async function BlogPage({}: // searchParams,
         <CategorySelect categories={categories} currentCategory={category} />
         <BlogPostList posts={displayedPosts} />
       </div> */}
-
       {/* <NewsletterSignUp
         title={
           category ? `Stay updated on ${category} articles` : "Stay updated"

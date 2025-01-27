@@ -93,28 +93,29 @@ const resumeData: ResumeData = {
 export function Resume() {
   return (
     <div>
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="relative">
           <div className="divide-y divide-gray-100">
             {resumeData.experiences.map((experience) => (
               <div
                 key={experience.company}
-                className="grid grid-cols-[2fr,0fr,4fr] gap-6 py-12 first:pt-0 last:pb-0"
+                className="grid grid-cols-1 md:grid-cols-[2fr,0fr,4fr] gap-6 py-8 sm:py-12 first:pt-0 last:pb-0"
               >
+                {/* Company Information */}
                 <div>
-                  <h3 className="text-xl font-bold">{experience.company}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold">{experience.company}</h3>
                   <p className="text-sm text-gray-600">{experience.period}</p>
                 </div>
 
-                <div />
+                <div className="hidden md:block" />
 
                 <div className="space-y-6">
                   {experience.positions.map((position, index) => (
                     <div key={`${experience.company}-${index}`} className="space-y-4">
-                      <h4 className="text-lg font-semibold">{position.title}</h4>
+                      <h4 className="text-base sm:text-lg font-semibold">{position.title}</h4>
                       <div className="space-y-3">
                         {position.description.map((desc, i) => (
-                          <p key={i} className="text-gray-600">
+                          <p key={i} className="text-gray-600 text-sm sm:text-base">
                             {desc}
                           </p>
                         ))}
@@ -126,7 +127,7 @@ export function Resume() {
             ))}
           </div>
 
-          <div className="absolute left-[calc(28%_-_1rem)] top-0 h-full">
+          <div className="hidden md:block absolute left-[calc(33%_-_1rem)] top-0 h-full">
             <Timeline avatarUrl={resumeData.avatarUrl} />
           </div>
         </div>

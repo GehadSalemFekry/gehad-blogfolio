@@ -26,19 +26,17 @@ export default function AboutPage() {
       </span>
       <HeaderPattern />
 
-      <div className="space-y-[80px] relative">
+      <div className="space-y-[80px] lg:space-y-[80px] relative">
         {/* Title */}
-        <div className="pt-[90px] flex justify-around items-center">
-          <div className="max-w-3xl">
-            <h1
-              className="text-text-primary text-balance font-medium text-6xl leading-[64px]
-            tracking-tighter"
-            >
+
+        <div className="pt-[40px] md:pt-[100px] flex flex-col lg:flex-row justify-around items-center space-y-2 lg:space-y-0">
+          <div className="max-w-3xl text-center lg:text-left">
+            <h1 className="text-text-primary text-balance font-medium text-4xl sm:text-5xl lg:text-6xl leading-[48px] sm:leading-[56px] lg:leading-[64px] tracking-tighter">
               {timeOfDayGreeting} <br />
               I&apos;m Gehad, a software engineer and quantum researcher.
             </h1>
           </div>
-          <div className="flex-shrink-0 ml-8">
+          <div className="flex-shrink-0 lg:ml-8">
             <ProfilePicture />
           </div>
         </div>
@@ -47,31 +45,25 @@ export default function AboutPage() {
           <HorizontalLine />
         </span>
 
-        {/* About */}
-        <div className="relative text-center space-y-8">
+        <div className="relative text-center space-y-8 mt-16">
           <div className="space-y-4">
-            <div className="text-sm font-medium text-indigo-600 text-center">
+            <div className="text-sm font-medium text-indigo-600">
               <span>Experience</span>
             </div>
             <div className="max-w-3xl mx-auto">
-              <h2
-                className="max-w-96 mx-auto text-text-primary text-balance font-medium text-3xl leading-[40px]
-            tracking-tighter"
-              >
+              <h2 className="max-w-96 mx-auto text-text-primary text-balance font-medium text-2xl sm:text-3xl lg:text-4xl leading-[32px] sm:leading-[40px] lg:leading-[48px] tracking-tighter">
                 My work and research journey.
               </h2>
             </div>
           </div>
         </div>
-        <div className="space-y-16">
+        <div className="space-y-16 mt-12">
           <Resume />
-          {/* <Link href={siteMetadata.resume}> */}
           <div className="flex justify-center">
             <Button variant="secondary" href={siteMetadata.resume} target="_blank">
               Download Resume
             </Button>
           </div>
-          {/* </Link> */}
         </div>
 
         {/* <section className="space-y-16 relative">

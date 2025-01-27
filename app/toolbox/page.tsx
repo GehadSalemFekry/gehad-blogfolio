@@ -21,13 +21,7 @@ export default function ToolboxPage() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <g opacity="0.5" filter="url(#filter0_i_185_2882)">
-            <circle
-              cx="14.5"
-              cy="14.5"
-              r="11.5"
-              stroke="#EDEEF2"
-              strokeWidth="6"
-            />
+            <circle cx="14.5" cy="14.5" r="11.5" stroke="#EDEEF2" strokeWidth="6" />
           </g>
           <defs>
             <filter
@@ -40,12 +34,7 @@ export default function ToolboxPage() {
               colorInterpolationFilters="sRGB"
             >
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -54,30 +43,21 @@ export default function ToolboxPage() {
               />
               <feOffset dy="2" />
               <feGaussianBlur stdDeviation="0.75" />
-              <feComposite
-                in2="hardAlpha"
-                operator="arithmetic"
-                k2="-1"
-                k3="1"
-              />
+              <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
               <feColorMatrix
                 type="matrix"
                 values="0 0 0 0 0.647059 0 0 0 0 0.682353 0 0 0 0 0.721569 0 0 0 0.32 0"
               />
-              <feBlend
-                mode="normal"
-                in2="shape"
-                result="effect1_innerShadow_185_2882"
-              />
+              <feBlend mode="normal" in2="shape" result="effect1_innerShadow_185_2882" />
             </filter>
           </defs>
         </svg>
       </span>
-      <span className="absolute right-4 top-14">
+      <span className="absolute right-4 top-2 md:top-14">
         <BgSectionTag width={250} tagType={TagType.TOOLBOX} />
       </span>
-      <div className="space-y-[80px] relative">
-        <div className="pt-[90px] max-w-2xl mx-auto">
+      <div className="space-y-[40px] md:space-y-[80px] relative">
+        <div className="pt-[40px] md:pt-[100px] max-w-2xl mx-auto">
           <PageTitle title="Software & websites I use almost daily." />
         </div>
         <span className="absolute top-40 -translate-y-1/2 left-1/2 translate-x-1/2">
@@ -134,31 +114,22 @@ export default function ToolboxPage() {
                   />
                   <feOffset dy="2" />
                   <feGaussianBlur stdDeviation="0.75" />
-                  <feComposite
-                    in2="hardAlpha"
-                    operator="arithmetic"
-                    k2="-1"
-                    k3="1"
-                  />
+                  <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
                   <feColorMatrix
                     type="matrix"
                     values="0 0 0 0 0.647059 0 0 0 0 0.682353 0 0 0 0 0.721569 0 0 0 0.32 0"
                   />
-                  <feBlend
-                    mode="normal"
-                    in2="shape"
-                    result="effect1_innerShadow_185_3011"
-                  />
+                  <feBlend mode="normal" in2="shape" result="effect1_innerShadow_185_3011" />
                 </filter>
               </defs>
             </svg>
           </span>
         </div>
-        <span className="absolute -left-[73px] top-[188px]">
+        <span className="hidden lg:block absolute -left-[73px] top-[188px]">
           <BgSectionTag tagType={TagType.SECTION} />
         </span>
         {/* List */}
-        <div className="grid grid-cols-8 grid-rows-1 gap-6 place-items-center relative pb-24">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-4 sm:gap-6 place-items-center relative pb-16 sm:pb-24">
           <span className="absolute top-0">
             <HorizontalLine />
           </span>
@@ -180,7 +151,7 @@ export default function ToolboxPage() {
                   </div>
                 </div>
                 {item.title ? (
-                  <p className="text-gray-500 text-sm mt-3">{item.title}</p>
+                  <p className="text-gray-500 text-sm mt-2 sm:mt-3">{item.title}</p>
                 ) : null}
               </div>
             </a>

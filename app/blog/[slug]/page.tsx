@@ -71,7 +71,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   const similarPosts = post.categories[0]
     ? getBlogPostsByCategory(post.categories[0])
         .filter((p) => p.slug !== post.slug)
-        .slice(0, 3)
+        .slice(0, 6)
     : [];
 
   const readingTime = readingDuration(post.code, {
@@ -80,43 +80,45 @@ export default async function BlogPage({ params }: BlogPageProps) {
   });
 
   return (
-    <article className="space-y-12">
-      {/* Article Banner Image */}
+    <article className="space-y-6 sm:space-y-12">
       <div className="relative">
         {/* Lines */}
-        <span className="absolute w-full h-px bg-zinc-500/75 mix-blend-screen top-12 z-10"></span>
-        <span className="absolute w-full h-px bg-zinc-500/75 mix-blend-screen bottom-12 z-10"></span>
-        <span className="absolute w-px h-full bg-zinc-500/75 mix-blend-screen left-12 z-10"></span>
-        <span className="absolute w-px h-full bg-zinc-500/75 mix-blend-screen right-12 z-10"></span>
+        <span className="absolute w-full h-px bg-zinc-500/75 mix-blend-screen top-4 sm:top-8 md:top-12 z-10"></span>
+        <span className="absolute w-full h-px bg-zinc-500/75 mix-blend-screen bottom-4 sm:bottom-8 md:bottom-12 z-10"></span>
+        <span className="absolute w-px h-full bg-zinc-500/75 mix-blend-screen left-4 sm:left-8 md:left-12 z-10"></span>
+        <span className="absolute w-px h-full bg-zinc-500/75 mix-blend-screen right-4 sm:right-8 md:right-12 z-10"></span>
 
         {/* top left cross */}
-        <span className="w-2 h-px bg-white absolute left-[44.5px] top-12 z-20"></span>
-        <span className="w-px h-2 bg-white absolute left-[48px] top-[44.5px] z-20"></span>
+        <span className="w-2 h-px bg-white absolute left-[12.5px] sm:left-[28.5px] md:left-[44.5px] top-4 sm:top-8 md:top-12 z-20"></span>
+        <span className="w-px h-2 bg-white absolute left-[16px] sm:left-[32px] md:left-[48px] top-[12.5px] sm:top-[28.5px] md:top-[44.5px] z-20"></span>
 
         {/* top right cross */}
-        <span className="w-2 h-px bg-white absolute right-[44.5px] top-12 z-20"></span>
-        <span className="w-px h-2 bg-white absolute right-[48px] top-[44.5px] z-20"></span>
+        <span className="w-2 h-px bg-white absolute right-[12.5px] sm:right-[28.5px] md:right-[44.5px] top-4 sm:top-8 md:top-12 z-20"></span>
+        <span className="w-px h-2 bg-white absolute right-[16px] sm:right-[32px] md:right-[48px] top-[12.5px] sm:top-[28.5px] md:top-[44.5px] z-20"></span>
 
         {/* bottom left cross */}
-        <span className="w-2 h-px bg-white absolute left-[44.5px] bottom-12 z-20"></span>
-        <span className="w-px h-2 bg-white absolute left-[48px] bottom-[44.5px] z-20"></span>
+        <span className="w-2 h-px bg-white absolute left-[12.5px] sm:left-[28.5px] md:left-[44.5px] bottom-4 sm:bottom-8 md:bottom-12 z-20"></span>
+        <span className="w-px h-2 bg-white absolute left-[16px] sm:left-[32px] md:left-[48px] bottom-[12.5px] sm:bottom-[28.5px] md:bottom-[44.5px] z-20"></span>
 
         {/* bottom right cross */}
-        <span className="w-2 h-px bg-white absolute right-[44.5px] bottom-12 z-20"></span>
-        <span className="w-px h-2 bg-white absolute right-[48px] bottom-[44.5px] z-20"></span>
+        <span className="w-2 h-px bg-white absolute right-[12.5px] sm:right-[28.5px] md:right-[44.5px] bottom-4 sm:bottom-8 md:bottom-12 z-20"></span>
+        <span className="w-px h-2 bg-white absolute right-[16px] sm:right-[32px] md:right-[48px] bottom-[12.5px] sm:bottom-[28.5px] md:bottom-[44.5px] z-20"></span>
 
-        <Image
-          src={`/blog/${post.imageName}`}
-          width={1200}
-          height={600}
-          className="w-full h-[600px] object-cover rounded-2xl mb-16 drama-shadow"
-          alt={post.title}
-        />
+        <div className="relative w-full rounded-2xl mb-16 drama-shadow overflow-hidden">
+          <Image
+            src={`/blog/${post.imageName}`}
+            width={1200}
+            height={600}
+            className="w-full h-auto min-h-64 object-cover"
+            alt={post.title}
+          />
+        </div>
+
         <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
         {/* <div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-indigo-500/90 from-20% to-transparent rounded-2xl"></div> */}
         {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/75 to-transparent rounded-2xl"></div> */}
 
-        <div className="text-left space-y-6 absolute bottom-16 left-16 max-w-3xl text-balance">
+        <div className="text-left space-y-2 md:space-y-6 absolute bottom-6 sm:bottom-10 md:bottom-16 left-6 sm:left-10 md:left-16 max-w-3xl text-balance">
           <div className="flex flex-wrap gap-2">
             {post.categories.slice(0, 3).map((category, index) => (
               <div
@@ -127,15 +129,17 @@ export default async function BlogPage({ params }: BlogPageProps) {
               </div>
             ))}
           </div>
-          <div className="space-y-4">
-            <h1 className="font-medium text-5xl tracking-tight text-balance leading-[64px] text-white">
+          <div className="space-y-2 md:space-y-6">
+            <h1 className="font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight text-balance leading-[1.2] sm:leading-[1.3] lg:leading-[1.4] xl:leading-[72px] text-white">
               {post.title}
             </h1>
-            <p className="text-slate-100 leading-8">{post.summary}</p>
+            <p className="text-slate-100 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-5 sm:leading-6 md:leading-7 lg:leading-8 xl:leading-9">
+              {post.summary}
+            </p>
           </div>
 
           {/* View Count */}
-          <div className="flex items-center gap-4 text-slate-300 text-sm">
+          <div className="flex items-center gap-2 sm:gap-4 text-slate-300 text-sm">
             <div className="flex items-center gap-1.5 text-slate-300 text-xs">
               <svg className="w-5 h-5 text-slate-200" fill="none" viewBox="0 0 24 24">
                 <path
@@ -226,28 +230,28 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </div>
       </div>
       {/* Content */}
-      <div className="wrapper z-10">
+      <div className="relative wrapper z-10 px-5">
         <MDXContent code={post.code} />
       </div>
 
       {/* Similar Posts */}
-      <section className="space-y-16">
+      <section className="space-y-8 md:space-y-16">
         <div className="space-y-4 relative">
           <span className="absolute left-1/2 -translate-x-1/2 top-0 pointer-events-none">
             <BgGradient />
           </span>
           <SectionTitlePill title="Similar Posts" />
-          <h2 className="mx-auto text-text-primary text-center text-balance font-medium text-3xl tracking-tighter max-w-lg leading-10">
+          <h2 className="mx-auto text-text-primary text-center text-balance font-medium text-2xl md:text-3xl tracking-tighter max-w-lg leading-10">
             You may also find value in these other similar articles.
           </h2>
         </div>
 
         <div className="z-10">
-          <ul className="grid grid-cols-3 px-5 gap-2">
+          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:px-5 gap-2">
             <HorizontalLine />
             {similarPosts.length > 0 ? (
               <>
-                {similarPosts.slice(0, 3).map((post) => (
+                {similarPosts.map((post) => (
                   <FeaturedBlogCard
                     key={post.slug}
                     slug={post.slug}
