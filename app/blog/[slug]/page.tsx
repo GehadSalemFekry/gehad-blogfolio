@@ -107,13 +107,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
         <Image
           src={`/blog/${post.imageName}`}
-          width={1200} 
-          height={600} 
+          width={1200}
+          height={600}
           className="w-full h-[600px] object-cover rounded-2xl mb-16 drama-shadow"
           alt={post.title}
         />
-
-        <div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-indigo-500/90 from-20% to-transparent rounded-2xl"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
+        {/* <div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-indigo-500/90 from-20% to-transparent rounded-2xl"></div> */}
         {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/75 to-transparent rounded-2xl"></div> */}
 
         <div className="text-left space-y-6 absolute bottom-16 left-16 max-w-3xl text-balance">
