@@ -13,7 +13,7 @@ export function Footer() {
           {/* Left Section: General and Specifics Links */}
           <div className="flex flex-col text-xs sm:pr-10 md:pr-28 lg:pr-48 pt-6 lg:gap-20">
             <div className="flex flex-row gap-8 sm:gap-20">
-              <div>
+              <div className="min-w-28">
                 <span className="text-base font-medium mb-4 inline-block text-text-primary">
                   General
                 </span>
@@ -26,6 +26,9 @@ export function Footer() {
                   </li>
                   <li>
                     <Link href="/blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link href="/privacy-policy">Privacy Policy</Link>
                   </li>
                 </ul>
               </div>
