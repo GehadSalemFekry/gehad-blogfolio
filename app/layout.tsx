@@ -9,6 +9,7 @@ import { HorizontalLine } from "./components/HorizontalLine";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: siteMetadata.title,
@@ -23,7 +24,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable}`}>
       <head>
-        <meta name="impact-site-verification" content="e77eefab-adf4-4cac-ab88-2fe4280e58d5"></meta>
+        <Script
+          id="next"
+          async
+          src={`https://www.googletagmanager.com/gtag/js??id=G-BGCHECJESW`}
+        ></Script>
+        <Script id="next">
+          {`window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-BGCHECJESW');`}
+        </Script>
       </head>
       <body className="font-sans">
         <main
