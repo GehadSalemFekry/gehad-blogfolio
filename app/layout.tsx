@@ -8,6 +8,7 @@ import { cx } from "./lib/utils";
 import { HorizontalLine } from "./components/HorizontalLine";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: siteMetadata.title,
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable}`}>
       <head>
-        <meta name='impact-site-verification' content='e77eefab-adf4-4cac-ab88-2fe4280e58d5'></meta>
+        <meta name="impact-site-verification" content="e77eefab-adf4-4cac-ab88-2fe4280e58d5"></meta>
       </head>
       <body className="font-sans">
         <main
@@ -37,6 +38,7 @@ export default function RootLayout({
             <div className="col-span-1 relative">
               <BgGradient />
               {children}
+              <Analytics />
             </div>
             <div className="hidden md:block w-full border-l border-border-primary opacity-75 [background-image:linear-gradient(45deg,theme(colors.border-primary)_12.50%,transparent_12.50%,transparent_50%,theme(colors.border-primary)_50%,theme(colors.border-primary)_62.50%,transparent_62.50%,transparent_100%)] [background-size:5px_5px]"></div>
           </div>
