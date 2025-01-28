@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable}`}>
-      <head></head>
+      <head>
+        <meta name='impact-site-verification' content='e77eefab-adf4-4cac-ab88-2fe4280e58d5'></meta>
+      </head>
       <body className="font-sans">
         <main
           className={cx(
